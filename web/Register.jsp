@@ -12,8 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form action="/Vaccine_Admin_Tracker/Register" method="post">
+            <input type="text" placeholder="Test" name="test" required>
+            <input type="submit">
+        </form>
         <%@taglib uri="WEB-INF/tlds/Register.tld" prefix="register" %>
-        <register:RegisterTagHandler/>
-        <h1>Hello World!</h1>
+        <%
+            String name = request.getParameter("test");
+            out.println(name);
+        %>
+        <register:NewTag name="${name}"></register:NewTag>
     </body>
 </html>
