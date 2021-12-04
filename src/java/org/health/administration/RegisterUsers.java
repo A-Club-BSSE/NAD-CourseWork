@@ -31,6 +31,21 @@ public class RegisterUsers extends SimpleTagSupport {
         JspWriter out = getJspContext().getOut();
         
         try {
+            String[] data = values.split(",");
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccination", "root", "")) {
+                    Statement stmt = con.createStatement();
+                    ResultSet rs = stmt.executeQuery("INSERT INTO Persons ('" + data[0] +"','" + data[1] +"')");
+                    while(rs.next()){
+                        out.println(rs.getString(1) + " " + rs.getString(2));
+                    }
+                }
+            } catch (SQLException e) {
+                out.println(e);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(RegisterUsers.class.getName()).log(Level.SEVERE, null, ex);
+            }
             // TODO: insert code to write html before writing the body content.
             // e.g.:
             //
