@@ -6,8 +6,10 @@
             <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/web/Register.jsp</file>
             <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/web/WEB-INF/web.xml</file>
             <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/web/WEB-INF/tlds/Register.tld</file>
-            <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/src/java/org/health/administration/RegisterTagHandler.java</file>
+            <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/src/java/org/health/administration/RegisterUsers.java</file>
             <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/src/java/org/health/administration/Register.java</file>
+            <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/src/java/org/health/administration/NewTag.java</file>
+            <file>file:/Users/elijahokello/NetBeansProjects/Vaccine%20Admin%20Tracker/src/java/org/health/administration/DBConnection.java</file>
         </group>
     </open-files>
 </project-private>
