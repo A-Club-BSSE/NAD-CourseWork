@@ -29,19 +29,25 @@ public class Authenticate extends SimpleTagSupport {
         JspWriter out = getJspContext().getOut();
         
         try {
+            out.println(values);
             String[] data = values.split(",");
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccination", "root", "")) {
                     Statement stmt = con.createStatement();
                     ResultSet rs = stmt.executeQuery("SELECT * FROM Persons WHERE Email='" + data[0] +"'");
+//                    " + data[0] +"'
                     boolean email = false;
                     String emailContent = "";
                     String passwordContent = "";
                     while(rs.next()){
-                        out.println(rs.getString(6)+" already exists");
+                        passwordContent = rs.getString(8);
+                        out.println("Working");
+                        emailContent = rs.getString(7);
                         email = true;
                     }
+                    out.println("DB PASS: "+ passwordContent);
+                    out.println("INPUT: "+ data[1]);
                     if(email){
                         if(data[1].equals(passwordContent)){
                             out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/'</script>");
@@ -50,7 +56,7 @@ public class Authenticate extends SimpleTagSupport {
                             out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/signin'</script>");                            
                         }
                     }else{
-                        out.println("<script>window.alert('You don't have an account. Please create one.');</script>");
+                        out.println("<script> window.alert('Account Doesnt exist');</script>");
                         out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/RegisterPage'</script>");
                     }
                 }

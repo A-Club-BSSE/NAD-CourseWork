@@ -25,6 +25,6 @@
             String password = request.getParameter("password");
             out.println(password);
         %>
-        <register:Authenticate values="elijahoke@gmail.com,123"></register:Authenticate>
+        <register:Authenticate values="${email},${password}"></register:Authenticate>
     </body>
 </html>

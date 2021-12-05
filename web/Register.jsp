@@ -23,7 +23,7 @@
                 display:flex;
                 justify-content: center;
                 border-radius: 20px;
-                height:800px;
+                height:900px;
             }
             
             .field-container{
@@ -78,6 +78,10 @@
                     </div>
                     <div class="field-container">
                         <input class="inpttxt" type="password" placeholder="Password" name = "password" required>
+                    </div>
+                    <div class="field-container">
+                        <p style="text-align:center;">Are you an Admin ?</p>
+                        <input value="TRUE" class="inpttxt" type="radio" name = "is_admin" >
                     </div>
                     <div class="field-container-btn">
                         <input class="btn" type="submit">

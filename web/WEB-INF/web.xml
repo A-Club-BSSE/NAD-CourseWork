@@ -20,6 +20,10 @@
         <servlet-name>AuthPage</servlet-name>
         <jsp-file>/Auth.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>org.health.administration.AuthServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>SiginPage</servlet-name>
         <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/AuthServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
