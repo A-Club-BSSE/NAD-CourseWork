@@ -11,20 +11,18 @@ import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author elijahokello
  */
-public class RegisterUsers extends SimpleTagSupport {
+public class Authenticate extends SimpleTagSupport {
 
     private String values;
 
     /**
-     * Called by the container to invoke this tag.The implementation of this
- method is provided by the tag library developer, and handles all tag
- processing, body iteration, etc.
-     * @throws jakarta.servlet.jsp.JspException
+     * Called by the container to invoke this tag. The implementation of this
+     * method is provided by the tag library developer, and handles all tag
+     * processing, body iteration, etc.
      */
     @Override
     public void doTag() throws JspException {
@@ -36,18 +34,24 @@ public class RegisterUsers extends SimpleTagSupport {
                 Class.forName("com.mysql.jdbc.Driver");
                 try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccination", "root", "")) {
                     Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery("SELECT * FROM Persons WHERE Email='" + data[5] +"'");
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM Persons WHERE Email='" + data[0] +"'");
                     boolean email = false;
+                    String emailContent = "";
+                    String passwordContent = "";
                     while(rs.next()){
                         out.println(rs.getString(6)+" already exists");
                         email = true;
                     }
                     if(email){
-                        out.println("<script> window.alert('Email Already exists');</script>");
-                        out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/RegisterPage'</script>");
+                        if(data[1].equals(passwordContent)){
+                            out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/'</script>");
+                        }else{
+                            out.println("<script>window.alert('Wrong Password. Try Again!');</script>");
+                            out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/signin'</script>");                            
+                        }
                     }else{
-                        int row = stmt.executeUpdate("INSERT INTO Persons (Name,Contact,Nin,Age,Gender,Email,Password) VALUES ('" + data[0] +"','" + data[1] +"','" + data[2] +"'," + data[3] +",'" + data[4] +"','" + data[5] +"','" + data[6] +"')");
-                        out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/signin'</script>");
+                        out.println("<script>window.alert('You don't have an account. Please create one.');</script>");
+                        out.println("<script> window.location.href = 'http://localhost:8080/Vaccine_Admin_Tracker/RegisterPage'</script>");
                     }
                 }
             } catch (SQLException e) {
@@ -71,7 +75,7 @@ public class RegisterUsers extends SimpleTagSupport {
             //
             // out.println("    </blockquote>");
         } catch (java.io.IOException ex) {
-            throw new JspException("Error in RegisterUsers tag", ex);
+            throw new JspException("Error in Authenticate tag", ex);
         }
     }
 

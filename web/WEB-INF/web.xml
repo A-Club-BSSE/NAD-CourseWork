@@ -8,13 +8,37 @@
         <servlet-name>RegisterPage</servlet-name>
         <jsp-file>/Register.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>SiginPage</servlet-name>
+        <jsp-file>/SiginIn.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>SendDataPage</servlet-name>
+        <jsp-file>/SendData.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthPage</servlet-name>
+        <jsp-file>/Auth.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AuthPage</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendDataPage</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RegisterPage</servlet-name>
         <url-pattern>/RegisterPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SiginPage</servlet-name>
+        <url-pattern>/signin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

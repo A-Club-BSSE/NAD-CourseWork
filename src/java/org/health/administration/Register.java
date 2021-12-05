@@ -31,7 +31,13 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String name = request.getParameter("test");
+            String name = request.getParameter("Name");
+            String contact = request.getParameter("contact");
+            String nin = request.getParameter("nin");
+            String age = request.getParameter("age");
+            String gender = request.getParameter("gender");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -39,8 +45,14 @@ public class Register extends HttpServlet {
             out.println("<title>Servlet Register</title>");            
             out.println("</head>");
             out.println("<body>");
-            request.setAttribute("test",name);
-            RequestDispatcher req = request.getRequestDispatcher("RegisterPage");
+            request.setAttribute("name",name);
+            request.setAttribute("contact",contact);
+            request.setAttribute("nin",nin);
+            request.setAttribute("age",age);
+            request.setAttribute("gender",gender);
+            request.setAttribute("email",email);
+            request.setAttribute("password",password);
+            RequestDispatcher req = request.getRequestDispatcher("send");
             req.forward(request,response);
             out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
             out.println("</body>");
