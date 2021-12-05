@@ -40,6 +40,65 @@
         <servlet-name>SiginPage</servlet-name>
         <url-pattern>/signin</url-pattern>
     </servlet-mapping>
+        <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>dispatcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dispatch</servlet-name>
+        <servlet-class>org.health.administration.dispatch</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>certificateservlet</servlet-name>
+        <servlet-class>org.health.administration.certificateservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Certificate</servlet-name>
+        <servlet-class>org.health.administration.Certificate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/dispatcher</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispatch</servlet-name>
+        <url-pattern>/dispatch</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>retriever</servlet-name>
+        <jsp-file>/retriever.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>retriever</servlet-name>
+        <url-pattern>/retriever</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>target</servlet-name>
+        <jsp-file>/target.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>target</servlet-name>
+        <url-pattern>/target</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>certificate</servlet-name>
+        <jsp-file>/certificate.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>certificate</servlet-name>
+        <url-pattern>/certificate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>certificateservlet</servlet-name>
+        <url-pattern>/certificateservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Certificate</servlet-name>
+        <url-pattern>/Certificate</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
