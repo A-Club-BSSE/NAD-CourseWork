@@ -21,7 +21,7 @@
       </listener>
     -->
   <tag>
-    <name>BookingTagHandler</name>
+    <name>insert</name>
     <tag-class>org.health.booking.BookingTagHandler</tag-class>
     <body-content>empty</body-content>
     <attribute>
