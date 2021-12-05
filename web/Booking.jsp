@@ -12,7 +12,7 @@
         <title>Booking Page</title>
     </head>
     <body>
-            <%@taglib uri = "WEB-INF/tlds/Booking.tld" prefix="Book"%>
+            <%@taglib uri = "WEB-INF/tlds/Booking.tld" prefix="Vaccination"%>
             
         <h1>Booking Of Vaccination</h1>
         
@@ -33,7 +33,16 @@
                 </tr>
                 <tr>
                     <td>Place Of Preference</td>
-                    <td><input type="text" name="place"/></td>
+                    <td>
+                        <select name = "place">
+                            <option value = "Mulago">Mulago Hospital</option>
+                            <option value = "Nsambya">Nsambya Hospital</option>
+                            <option value = "Lyantonde">Lyantonde Hospital</option>
+                            <option value = "Soroti ">Soroti Hospital</option>
+                            <option value = "Gulu ">Gulu Hospital</option>
+                            
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -51,7 +60,7 @@
 //               request.setAttribute("place",POP);
             %>
             
-            <Book:BookingTagHandler table="vaccination" values="${name},${date},${time},${place}"/>
+            <Vaccination:BookingTagHandler table="vaccination" values="${name},${date},${time},${place}"/>
         </table>
     </body>
 </html>
