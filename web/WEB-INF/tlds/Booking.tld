@@ -38,20 +38,8 @@
     </attribute>
   </tag>
   <tag>
-    <name>RetrivingTagHandler</name>
-    <tag-class>org.health.booking.RetrivingTagHandler</tag-class>
-    <body-content>empty</body-content>
-    <attribute>
-      <name>table</name>
-      <required>true</required>
-      <rtexprvalue>true</rtexprvalue>
-      <type>java.lang.String</type>
-    </attribute>
-    <attribute>
-      <name>value</name>
-      <required>true</required>
-      <rtexprvalue>true</rtexprvalue>
-      <type>java.lang.String</type>
-    </attribute>
+    <name>SelectHospitals</name>
+    <tag-class>org.health.booking.SelectHospitals</tag-class>
+    <body-content>scriptless</body-content>
   </tag>
 </taglib>
