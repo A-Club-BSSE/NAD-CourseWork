@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package org.health.administration;
+package org.health.health;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -14,9 +14,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author elijahokello
+ * @author IPERU
  */
-public class Register extends HttpServlet {
+public class Receiver extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,33 +30,31 @@ public class Register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String name = request.getParameter("Name");
-            String contact = request.getParameter("contact");
-            String nin = request.getParameter("nin");
-            String age = request.getParameter("age");
-            String gender = request.getParameter("gender");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String is_admin = request.getParameter("is_admin");
+        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet Receiver</title>");            
             out.println("</head>");
             out.println("<body>");
-            request.setAttribute("name",name);
-            request.setAttribute("contact",contact);
-            request.setAttribute("nin",nin);
-            request.setAttribute("age",age);
-            request.setAttribute("gender",gender);
-            request.setAttribute("email",email);
-            request.setAttribute("password",password);
-            request.setAttribute("is_admin",is_admin);
-            RequestDispatcher req = request.getRequestDispatcher("send");
-            req.forward(request,response);
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            
+            String n = request.getParameter("name");
+            String l = request.getParameter("location");
+            String email = request.getParameter("email");
+//            String vaccine = request.getParameter("vaccine");
+//            String action= request.getParameter("action");
+            
+            request.setAttribute("name", n);
+            request.setAttribute("location",l);
+            request.setAttribute("email", email);
+//            request.setAttribute("vaccine", vaccine);
+//            request.setAttribute("action", action);
+            
+            RequestDispatcher rd =   request.getRequestDispatcher("AddToDb.jsp");
+            rd.forward(request, response);
+            
+            
             out.println("</body>");
             out.println("</html>");
         }
