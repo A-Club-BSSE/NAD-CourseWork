@@ -85,6 +85,7 @@
     </head>
     <body>
             <%@taglib uri = "WEB-INF/tlds/Booking.tld" prefix="vaccination"%>
+           
             
         <h1>Booking Of Vaccination</h1>
         
@@ -106,12 +107,8 @@
             <label for="place-selection">Place Of Preference</label>
             <select id="place-selection" name="place" required>
                 <option value="">Choose a place from the List Below</option>
-                    <option value = "Mulago">Mulago Hospital</option>
-                    <option value = "Nsambya">Nsambya Hospital</option>
-                    <option value = "Lyantonde">Lyantonde Hospital</option>
-                    <option value = "Soroti ">Soroti Hospital</option>
-                    <option value = "Gulu ">Gulu Hospital</option>
-            </select>
+                <vaccination:SelectHospitals />
+                     </select>
           </div>
           <hr>
 
@@ -129,6 +126,7 @@
             %>
             
             <vaccination:insert table="vaccination" values="${name},${date},${time},${place}"/>
+           
         </table>
     </body>
 </html>
