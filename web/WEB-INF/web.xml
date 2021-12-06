@@ -27,6 +27,10 @@
         <servlet-name>UpDate</servlet-name>
         <servlet-class>org.health.health.UpDate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BookingServlet</servlet-name>
+        <servlet-class>org.health.booking.BookingServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
         <url-pattern>/Test</url-pattern>
@@ -109,6 +113,9 @@
         <servlet-name>RegisterPage</servlet-name>
         <url-pattern>/RegisterPage</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookingServlet</servlet-name>
+        <url-pattern>/BookingServlet</url-pattern>
 
     <servlet>
         <servlet-name>VaccineRegistration</servlet-name>
