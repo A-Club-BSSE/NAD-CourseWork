@@ -23,6 +23,28 @@
         <init-param>
             <param-name>Name</param-name>
             <param-value>Value</param-value>
+
+        <servlet-name>SiginPage</servlet-name>
+        <jsp-file>/SiginIn.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>SendDataPage</servlet-name>
+        <jsp-file>/SendData.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthPage</servlet-name>
+        <jsp-file>/Auth.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>org.health.administration.AuthServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForwardEmailServlet</servlet-name>
+        <servlet-class>org.health.administration.ForwardEmailServlet</servlet-class>
+        <init-param>
+            <param-name>adminEmail</param-name>
+            <param-value>halimahbukirwa24@gmail.com</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
@@ -30,9 +52,18 @@
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AuthPage</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendDataPage</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RegisterPage</servlet-name>
         <url-pattern>/RegisterPage</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>VaccineRegistration</servlet-name>
         <servlet-class>org.health.vaccine.VaccineRegistration</servlet-class>
@@ -49,6 +80,17 @@
     <servlet-mapping>
         <servlet-name>DistributeVaccine</servlet-name>
         <url-pattern>/DistributeVaccine</url-pattern>
+    <servlet-mapping>
+        <servlet-name>SiginPage</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/AuthServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForwardEmailServlet</servlet-name>
+        <url-pattern>/ForwardEmailServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

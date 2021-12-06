@@ -3,21 +3,19 @@
   <tlib-version>1.0</tlib-version>
   <short-name>register</short-name>
   <uri>/WEB-INF/tlds/Register</uri>
- 
   <tag>
-    <name>NewTag</name>
-    <tag-class>org.health.administration.NewTag</tag-class>
+    <name>RegisterUsers</name>
+    <tag-class>org.health.administration.RegisterUsers</tag-class>
     <body-content>scriptless</body-content>
     <attribute>
-      <name>name</name>
-      <required>true</required>
+      <name>values</name>
       <rtexprvalue>true</rtexprvalue>
       <type>java.lang.String</type>
     </attribute>
   </tag>
   <tag>
-    <name>RegisterUsers</name>
-    <tag-class>org.health.administration.RegisterUsers</tag-class>
+    <name>SendEmail</name>
+    <tag-class>org.health.administration.SendEmail</tag-class>
     <body-content>scriptless</body-content>
     <attribute>
       <name>values</name>

@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author elijahokello
  */
-public class Register extends HttpServlet {
+public class AuthServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,33 +30,21 @@ public class Register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
         try (PrintWriter out = response.getWriter()) {
-            String name = request.getParameter("Name");
-            String contact = request.getParameter("contact");
-            String nin = request.getParameter("nin");
-            String age = request.getParameter("age");
-            String gender = request.getParameter("gender");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String is_admin = request.getParameter("is_admin");
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet AuthServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            request.setAttribute("name",name);
-            request.setAttribute("contact",contact);
-            request.setAttribute("nin",nin);
-            request.setAttribute("age",age);
-            request.setAttribute("gender",gender);
             request.setAttribute("email",email);
             request.setAttribute("password",password);
-            request.setAttribute("is_admin",is_admin);
-            RequestDispatcher req = request.getRequestDispatcher("send");
-            req.forward(request,response);
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            RequestDispatcher req =request.getRequestDispatcher("auth");
+            req.forward(request, response);
+            out.println("<h1>Servlet AuthServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
