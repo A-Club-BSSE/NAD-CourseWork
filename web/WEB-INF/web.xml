@@ -31,6 +31,41 @@
         <servlet-name>HealthCentres</servlet-name>
         <url-pattern>/HealthCentres</url-pattern>
     </servlet-mapping>
+        <servlet-name>Status</servlet-name>
+        <servlet-class>org.health.vaccine.Status</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DistributeVaccine</servlet-name>
+        <servlet-class>org.health.vaccine.DistributeVaccine</servlet-class>
+        <init-param>
+            <param-name>Name</param-name>
+            <param-value>Value</param-value>
+        </init-param>
+     </servlet>
+     <servlet>
+        <servlet-name>SiginPage</servlet-name>
+        <jsp-file>/SiginIn.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>SendDataPage</servlet-name>
+        <jsp-file>/SendData.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthPage</servlet-name>
+        <jsp-file>/Auth.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>org.health.administration.AuthServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForwardEmailServlet</servlet-name>
+        <servlet-class>org.health.administration.ForwardEmailServlet</servlet-class>
+        <init-param>
+            <param-name>adminEmail</param-name>
+            <param-value>halimahbukirwa24@gmail.com</param-value>
+        </init-param>
+    </servlet>
     <servlet-mapping>
         <servlet-name>connection</servlet-name>
         <url-pattern>/connection</url-pattern>
@@ -58,6 +93,104 @@
     <servlet-mapping>
         <servlet-name>healthcentre</servlet-name>
         <url-pattern>/healthcentre</url-pattern>
+        <servlet-name>AuthPage</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendDataPage</servlet-name>
+        <url-pattern>/send</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterPage</servlet-name>
+        <url-pattern>/RegisterPage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VaccineRegistration</servlet-name>
+        <servlet-class>org.health.vaccine.VaccineRegistration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VaccineRegistration</servlet-name>
+        <url-pattern>/VaccineRegistration</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+        <servlet-name>Status</servlet-name>
+        <url-pattern>/Status</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DistributeVaccine</servlet-name>
+        <url-pattern>/DistributeVaccine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SiginPage</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+        <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>dispatcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dispatch</servlet-name>
+        <servlet-class>org.health.administration.dispatch</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>certificateservlet</servlet-name>
+        <servlet-class>org.health.administration.certificateservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Certificate</servlet-name>
+        <servlet-class>org.health.administration.Certificate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/dispatcher</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispatch</servlet-name>
+        <url-pattern>/dispatch</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>retriever</servlet-name>
+        <jsp-file>/retriever.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>retriever</servlet-name>
+        <url-pattern>/retriever</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>target</servlet-name>
+        <jsp-file>/target.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>target</servlet-name>
+        <url-pattern>/target</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>certificate</servlet-name>
+        <jsp-file>/certificate.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>certificate</servlet-name>
+        <url-pattern>/certificate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>certificateservlet</servlet-name>
+        <url-pattern>/certificateservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Certificate</servlet-name>
+        <url-pattern>/Certificate</url-pattern>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/AuthServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForwardEmailServlet</servlet-name>
+        <url-pattern>/ForwardEmailServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

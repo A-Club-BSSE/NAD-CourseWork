@@ -14,49 +14,38 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author elijahokello
+ * @author Hyasmin
  */
-public class Register extends HttpServlet {
+public class dispatch extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String name = request.getParameter("Name");
-            String contact = request.getParameter("contact");
-            String nin = request.getParameter("nin");
-            String age = request.getParameter("age");
-            String gender = request.getParameter("gender");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String is_admin = request.getParameter("is_admin");
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet dispatch</title>");            
             out.println("</head>");
             out.println("<body>");
-            request.setAttribute("name",name);
-            request.setAttribute("contact",contact);
-            request.setAttribute("nin",nin);
-            request.setAttribute("age",age);
-            request.setAttribute("gender",gender);
-            request.setAttribute("email",email);
-            request.setAttribute("password",password);
-            request.setAttribute("is_admin",is_admin);
-            RequestDispatcher req = request.getRequestDispatcher("send");
-            req.forward(request,response);
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+                String x = request.getParameter("name");
+              String y = request.getParameter("nin");
+              String z = request.getParameter("healthcentre");
+                String a = request.getParameter("data");
+                 String b = request.getParameter("batchnumber");
+                  String c = request.getParameter("vaccinetype");
+              request.setAttribute("name", x);
+              request.setAttribute("nin", y);
+               request.setAttribute("name", x);
+              request.setAttribute("nin", y);
+              request.setAttribute("healthcentre", z);
+              request.setAttribute("data", a);
+              request.setAttribute("batchnumber", b);
+              request.setAttribute("vaccinetype", c);
+               RequestDispatcher re = request.getRequestDispatcher("receiver.jsp");
+               re.forward(request, response);
             out.println("</body>");
             out.println("</html>");
         }
