@@ -40,8 +40,8 @@ public class Certificate extends HttpServlet {
                  String b = request.getParameter("batchnumber");
                   String c = request.getParameter("vaccinetype");
                   
-            Cookie cookie = new Cookie("newCoookie",val);
-            response.addCookie(cookie);
+//            Cookie cookie = new Cookie("newCoookie",val);
+//            response.addCookie(cookie);
                         
                    //
               request.setAttribute("name",x);

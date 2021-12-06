@@ -45,12 +45,12 @@ public class certificateservlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             Cookie[] cookies = request.getCookies();
-          for(Cookie cook : cookies){
-             if(cook.getName().equals("newCoookie")){
-                 String value = cook.getValue();
-                 displayCertificateservlet(value,out);
-             }
-          }
+//          for(Cookie cook : cookies){
+//             if(cook.getName().equals("newCoookie")){
+//                 String value = cook.getValue();
+//                 displayCertificateservlet(value,out);
+//             }
+//          }
             out.println("<button onclick='window.print();'>Print Now</button>");
             
             out.println("</body>");

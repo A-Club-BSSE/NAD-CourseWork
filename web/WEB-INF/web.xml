@@ -140,6 +140,7 @@
     <servlet-mapping>
         <servlet-name>Certificate</servlet-name>
         <url-pattern>/Certificate</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/AuthServlet</url-pattern>
