@@ -59,7 +59,7 @@
         <div class="form-container">
             <!--<img src="https://image.freepik.com/free-vector/pills-medical-realistic-composition_98292-1233.jpg" alt="medic" width="700">-->
             <div>
-                <form action="/Vaccine_Admin_Tracker/auth" method="post">
+                <form action="/Vaccine_Admin_Tracker/AuthServlet" method="post">
                     <div class="field-container">
                         <input class="inpttxt" type="email" name="email" placeholder="Email" required>
                     </div>

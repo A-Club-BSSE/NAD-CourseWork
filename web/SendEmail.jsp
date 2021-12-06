@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Register
-    Created on : 2 Dec 2021, 15:53:17
+    Document   : SendEmail
+    Created on : 6 Dec 2021, 10:31:25
     Author     : elijahokello
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register </title>
+        <title>Send Email </title>
         <style>
             *{
                 font-family: 'Poppins', sans-serif;
@@ -23,7 +23,7 @@
                 display:flex;
                 justify-content: center;
                 border-radius: 20px;
-                height:900px;
+                height:400px
             }
             
             .field-container{
@@ -53,40 +53,24 @@
         </style>
     </head>
     <body style="background-color:">
-        <h1 style="text-align: center ">Register </h1>
+        <h1 style="text-align: center ">Send Email Reminder </h1>
         <div class="form-container">
             <!--<img src="https://image.freepik.com/free-vector/pills-medical-realistic-composition_98292-1233.jpg" alt="medic" width="700">-->
             <div>
-                <form action="/Vaccine_Admin_Tracker/Register" method="post">
+                <form action="/Vaccine_Admin_Tracker/ForwardEmailServlet" method="post">
                     <div class="field-container">
-                        <input class="inpttxt" type="text" name="Name" placeholder="Name" required>
+                        <input class="inpttxt" type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                     <div class="field-container">
+                        <input class="inpttxt" type="text" placeholder="Email" name = "email" required>
                     </div>
                     <div class="field-container">
-                        <input class="inpttxt" type="text" placeholder="Contact" name = "contact" required>
-                    </div>
-                    <div class="field-container">
-                        <input class="inpttxt" type="text" placeholder="Nin" name = "nin" required>
-                    </div>
-                    <div class="field-container">
-                        <input class="inpttxt" type="number" placeholder="Age" name = "age" required>
-                    </div>
-                    <div class="field-container">
-                        <input class="inpttxt" type="text" placeholder="Gender" name = "gender" required>
-                    </div>
-                    <div class="field-container">
-                        <input class="inpttxt" type="email" placeholder="Email" name = "email" required>
-                    </div>
-                    <div class="field-container">
-                        <input class="inpttxt" type="password" placeholder="Password" name = "password" required>
-                    </div>
-                    <div class="field-container">
-                        <p style="text-align:center;">Are you an Admin ?</p>
-                        <input value="TRUE" class="inpttxt" type="radio" name = "is_admin" >
+                        <input class="inpttxt" type="text" placeholder="Body" name = "body" required>
                     </div>
                     <div class="field-container-btn">
                         <input class="btn" type="submit">
                     </div>
-                    <p style="text-align: center">Already have an account? <a href="/Vaccine_Admin_Tracker/signin">Sign In</a> </p>
+                    <!--<p style="text-align: center">Already have an account? <a href="/Vaccine_Admin_Tracker/signin">Sign In</a> </p>-->
                </form>
             </div>
         </div>

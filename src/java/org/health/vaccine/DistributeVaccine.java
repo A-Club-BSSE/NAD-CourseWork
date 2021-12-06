@@ -1,8 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package org.health.administration;
+package org.health.vaccine;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -14,9 +15,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author elijahokello
+ * @author hp
  */
-public class Register extends HttpServlet {
+public class DistributeVaccine extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,33 +31,29 @@ public class Register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String name = request.getParameter("Name");
-            String contact = request.getParameter("contact");
-            String nin = request.getParameter("nin");
-            String age = request.getParameter("age");
-            String gender = request.getParameter("gender");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String is_admin = request.getParameter("is_admin");
+        
+         RequestDispatcher res = request.getRequestDispatcher("./Distribute.jsp");
+              res.forward(request, response);
+              
+        try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet DistributeVaccine</title>");            
             out.println("</head>");
             out.println("<body>");
-            request.setAttribute("name",name);
-            request.setAttribute("contact",contact);
-            request.setAttribute("nin",nin);
-            request.setAttribute("age",age);
-            request.setAttribute("gender",gender);
-            request.setAttribute("email",email);
-            request.setAttribute("password",password);
-            request.setAttribute("is_admin",is_admin);
-            RequestDispatcher req = request.getRequestDispatcher("send");
-            req.forward(request,response);
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            
+            String N=request.getParameter("Name");
+            String V=request.getParameter("VaccineType");
+            String A=request.getParameter("Amount");
+            
+            request.setAttribute("Name",N);
+            request.setAttribute("VaccineType",V);
+            request.setAttribute("Amount",A);
+            
+            out.println(request.getParameter("nt"));
+            out.println("<h1>Servlet DistributeVaccine at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

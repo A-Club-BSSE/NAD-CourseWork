@@ -22,9 +22,10 @@
             String gender = request.getParameter("gender");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-//            out.println(name);
+            String is_admin = request.getParameter("is_admin");
+//            out.println(is_admin);
         %>
-        <register:RegisterUsers values="${name},${contact},${nin},${age},${gender},${email},${password}"></register:RegisterUsers>
+        <register:RegisterUsers values="${name},${contact},${nin},${age},${gender},${email},${password},${is_admin}"></register:RegisterUsers>
        
     </body>
 </html>
