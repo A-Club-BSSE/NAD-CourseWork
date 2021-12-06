@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <welcome-file-list>
-        <welcome-file>
-            inventory.jsp
-        </welcome-file>
-    </welcome-file-list>
     <servlet>
         <servlet-name>Register</servlet-name>
         <servlet-class>org.health.administration.Register</servlet-class>
@@ -23,7 +18,9 @@
         <init-param>
             <param-name>Name</param-name>
             <param-value>Value</param-value>
-
+        </init-param>
+     </servlet>
+     <servlet>
         <servlet-name>SiginPage</servlet-name>
         <jsp-file>/SiginIn.jsp</jsp-file>
     </servlet>
@@ -80,6 +77,7 @@
     <servlet-mapping>
         <servlet-name>DistributeVaccine</servlet-name>
         <url-pattern>/DistributeVaccine</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SiginPage</servlet-name>
         <url-pattern>/signin</url-pattern>
