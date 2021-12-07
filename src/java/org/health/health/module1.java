@@ -50,10 +50,10 @@ public class module1 extends SimpleTagSupport {
             
             String [] newValues = values.split(",");
             
-             st.executeUpdate("insert into `hospitals` set Name='"+newValues[0]+"',Location='"+newValues[1]+"'");
+             st.executeUpdate("insert into `hospitals` set Name='"+newValues[0]+"',Location='"+newValues[1]+"',Email='"+newValues[2]+"'");
              
             // out.println("successfully inserted ");
-             out.println("<script type='text/javascript'>window.location='index.jsp'</script>");
+             out.println("<script type='text/javascript'>window.location='healthcentre.jsp'</script>");
              
             
                                }catch(SQLException e){

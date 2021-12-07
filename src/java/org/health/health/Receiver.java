@@ -41,9 +41,16 @@ public class Receiver extends HttpServlet {
             
             String n = request.getParameter("name");
             String l = request.getParameter("location");
+            String email = request.getParameter("email");
+//            String vaccine = request.getParameter("vaccine");
+//            String action= request.getParameter("action");
             
             request.setAttribute("name", n);
             request.setAttribute("location",l);
+            request.setAttribute("email", email);
+//            request.setAttribute("vaccine", vaccine);
+//            request.setAttribute("action", action);
+            
             RequestDispatcher rd =   request.getRequestDispatcher("AddToDb.jsp");
             rd.forward(request, response);
             

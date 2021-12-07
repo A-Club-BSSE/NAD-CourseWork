@@ -51,6 +51,14 @@
         <servlet-name>updating</servlet-name>
         <url-pattern>/Updating</url-pattern>
     </servlet-mapping>
+     <servlet>
+        <servlet-name>healthcentre</servlet-name>
+        <jsp-file>/healthcentre.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>healthcentre</servlet-name>
+        <url-pattern>/healthcentre</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

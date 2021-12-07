@@ -16,9 +16,12 @@ h<%--
         <%
             String name = request.getParameter("name");
             String location  = request.getParameter("location");
+            String email = request.getParameter("email");
+            String vaccine = request.getParameter("vaccine");
+            String action= request.getParameter("action");
            
         %>
 
-        <healthcentre:module1 table="hospitals" values="${name} , ${location}" ></healthcentre:module1>
+        <healthcentre:module1 table="hospitals" values="${name} , ${location},${email},${vaccine},${action}" ></healthcentre:module1>
     </body>
 </html>

@@ -25,6 +25,15 @@
                <td>LOCATION</td> 
                <td> <input type='text' name='location'></td>
            </tr>
+           <tr>
+               <td>Email</td> 
+               <td> <input type='text' name='email'></td>
+           </tr>
+           <tr>
+               <!--<td>Available vaccine</td>--> 
+               <td> <input type='hidden' name='vaccine'></td>
+           </tr>
+           
             <tr>
                <td></td> 
                <td> <input type='submit' value='save'></td>
@@ -41,7 +50,7 @@
        request.setAttribute("healthcentre",h);
        %>
         
-        <form action="index.jsp" method="post">
+        <form action="healthcentre.jsp" method="post">
             <br> <tr>Enter healthCentre
                    <td><input type='text' name='healthcentre'></td>
                </tr>
