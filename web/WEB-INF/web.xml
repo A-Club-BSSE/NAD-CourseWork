@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <welcome-file-list>
+        <welcome-file> index.jsp</welcome-file>
+    </welcome-file-list>
     <servlet>
-        <servlet-name>Register</servlet-name>
-        <servlet-class>org.health.administration.Register</servlet-class>
+        <servlet-name>HealthCentres</servlet-name>
+        <servlet-class>org.health.health.HealthCentres</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RegisterPage</servlet-name>
-        <jsp-file>/Register.jsp</jsp-file>
+        <servlet-name>connection</servlet-name>
+        <servlet-class>org.health.health.connection</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Receiver</servlet-name>
+        <servlet-class>org.health.health.Receiver</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test</servlet-name>
+        <jsp-file>/Picking.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>UpDate</servlet-name>
+        <servlet-class>org.health.health.UpDate</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Register</servlet-name>
-        <url-pattern>/Register</url-pattern>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RegisterPage</servlet-name>
-        <url-pattern>/RegisterPage</url-pattern>
+        <servlet-name>HealthCentres</servlet-name>
+        <url-pattern>/HealthCentres</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>connection</servlet-name>
+        <url-pattern>/connection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Receiver</servlet-name>
+        <url-pattern>/Receiver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpDate</servlet-name>
+        <url-pattern>/UpDate</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>updating</servlet-name>
+        <jsp-file>/Updating.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updating</servlet-name>
+        <url-pattern>/Updating</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

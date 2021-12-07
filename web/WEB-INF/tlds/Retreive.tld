@@ -42,7 +42,30 @@
       <type>java.lang.String</type>
     </attribute>
     <attribute>
-      <name>value</name>
+      <name>newvalue</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+  </tag>
+  <tag>
+    <name>updateHandler</name>
+    <tag-class>org.health.health.updateHandler</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>table</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>newvalue</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+    <attribute>
+      <name>where</name>
       <required>true</required>
       <rtexprvalue>true</rtexprvalue>
       <type>java.lang.String</type>

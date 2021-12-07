@@ -9,7 +9,6 @@ import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.tagext.JspFragment;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,7 +16,7 @@ import java.sql.Statement;
  *
  * @author IPERU
  */
-public class updater extends SimpleTagSupport {
+public class updateHandler extends SimpleTagSupport {
     Connecting conn=new Connecting();
 
     private String table;
@@ -39,7 +38,13 @@ public class updater extends SimpleTagSupport {
                 Connection newConn = conn.getMyConnection();
                 Statement st= newConn.createStatement();
                 String [] value= newvalue.split(",");
-                st.executeQuery("UPDATE 'hospitals' SET Location='"+value[0]+"',Name='"+value[1]+"' WHERE Id='"+where+"'");
+                if(value.length>1){
+                   st.executeUpdate("UPDATE hospitals SET Name='"+value[0]+"',Location='"+value[1]+"' WHERE Id='"+where+"';");
+                   out.println("<script type='text/javascript'>window.location='index.jsp'</script>");
+                }
+                
+                
+//                out.println(value[1]);
 //                while(rs.next()){
 //                    out.print(rs.getString(1));
 //                    out.print(rs.getString(2));
@@ -51,9 +56,6 @@ public class updater extends SimpleTagSupport {
             }catch(ClassNotFoundException e){
                 out.print("the error is "+e.getMessage());
             }
-//        }catch(ClassNotFoundException e){
-//                out.print("the error is "+e.getMessage());
-            
 
             JspFragment f = getJspBody();
             if (f != null) {
@@ -65,7 +67,7 @@ public class updater extends SimpleTagSupport {
             //
             // out.println("    </blockquote>");
         } catch (java.io.IOException ex) {
-            throw new JspException("Error in updater tag", ex);
+            throw new JspException("Error in updateHandler tag", ex);
         }
     }
 
@@ -76,6 +78,7 @@ public class updater extends SimpleTagSupport {
     public void setNewvalue(String newvalue) {
         this.newvalue = newvalue;
     }
+
     public void setWhere(String where) {
         this.where = where;
     }
